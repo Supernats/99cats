@@ -4,7 +4,7 @@ class CatRentalRequest < ActiveRecord::Base
   validates :status, :inclusion => %w{PENDING APPROVED DENIED}
 
   def overlapping_requests
-    CatRentalRequests.where('start_date > ?', )
+    # CatRentalRequests.where('start_date > ?', )
   end
 
   def overlapping_approved_requests
