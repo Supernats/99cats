@@ -1,17 +1,4 @@
 <h1>Create a new cat!</h1>
-<form>
-  <h2>Enter your cat's name!</h2>
-  <input="text" placeholder="Your cat's name here!" name="cat[name]">
-  <br>
-  <h2>Enter your cat's date of birth!<h2>
-    <input="text" name="cat[birth_date]">
-  <h2>What color is your cat?</h2>
-  <select name="cat[color]">
-    <% Cat.possible_colors.each do |color| %>
-    <option><%= color.capitalize %></option>
-    <% end %>
-  </select>
-  <h2>What is your cat's sex?</h2>
-  <p><input type="radio" name="cat[sex]" value = "M"> Male</p>
-  <p><input type="radio" name="cat[sex]" value = "F"> Female</p>
+<form action="<%= cats_url %>" method="post">
+<%= render "form", :cat => @cat %>
 </form>

@@ -10,4 +10,5 @@ class Cat < ActiveRecord::Base
   def self.possible_colors
     COLORS
   end
+
 end

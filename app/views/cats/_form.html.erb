@@ -1,0 +1,20 @@
+
+<h2>Enter your cat's name!</h2>
+<input type="text" value="<%= cat.name %>" name="cat[name]">
+<br>
+<h2>Enter your cat's pretend age. It <em>really</em> won't matter at all.</h2>
+<input type="text" value="<%= cat.age %>" name="cat[age]">
+<h2>Enter your cat's date of birth!<h2>
+  <input type="date" value="<%= cat.birth_date %>" name="cat[birth_date]">
+<h2>What color is your cat?</h2>
+<select value="%<= cat.color %>" name="cat[color]">
+  <% Cat.possible_colors.each do |color| %>
+  <option <%= "selected" if cat.color == color %>><%= color %></option>
+  <% end %>
+</select>
+<h2>What is your cat's sex?</h2>
+<p><input type="radio" name="cat[sex]" value="M"
+  <%= "checked" if cat.sex == "M" %>> Male</p>
+<p><input type="radio" name="cat[sex]" value="F"
+  <%= "checked" if cat.sex == "F" %>> Female</p>
+<input type = "submit" value = "Create my cat!">

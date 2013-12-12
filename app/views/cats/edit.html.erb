@@ -1,0 +1,5 @@
+<h1>Edit this cat!</h1>
+<form action="<%= cat_url %>" method="post">
+  <input type="hidden" name="_method" value="put">
+<%= render "form", :cat => @cat %>
+</form>
