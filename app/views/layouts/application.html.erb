@@ -2,11 +2,18 @@
 <html>
 <head>
   <title>99 Cats - Build Your Ultimate Cat Empire</title>
-  <%= csrf_meta_tags %>
+  <!-- <%= csrf_meta_tags %> -->
 </head>
 <body>
 
-<%= yield %>
 
+  <% if !current_user.nil? %>
+    Hello <%= "#{current_user.user_name}" %>
+    <%= button_to "Log out", session_url, :method => :delete %>
+  <% else %>
+    <%= link_to "Click here to login ", new_session_url %>
+    <%= link_to "or here to sign up", new_user_url %>
+  <% end %>
+<%= yield %>
 </body>
 </html>

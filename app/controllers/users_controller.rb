@@ -15,7 +15,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create(params[:user])
+    @user = User.create(params[:user])
+    if @user
+      login_user!(@user)
+    else
+      flash[:errors] = "Error creating user."
+      render :new
+    end
   end
 
   def edit
